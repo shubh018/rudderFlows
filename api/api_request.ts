@@ -7,7 +7,6 @@ console.log(process.env.WRITE_KEY);
 class SendRequest{
 
     getBasicAuthHeader(writeKey: string): string {
-    // Username = writeKey, password = empty
     const token = Buffer.from(`${writeKey}:`).toString('base64');
     return `Basic ${token}`;
 }

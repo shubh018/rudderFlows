@@ -19,16 +19,6 @@ class DestinationPage {
     async clickEventsTab(){
         await this.eventsTab.click();
         await this.delieveredEventsText.waitForDisplayed({timeout: 800000});
-        // await browser.waitUntil(
-        // async () => {
-        //     const elements = await $$("//span[text()='Delivered']");
-        //     return await elements.length === 1;
-        // },
-        // {
-        //     timeout: 60000,
-        //     timeoutMsg: "Expected exactly 1 Delivered element, but condition not met"
-        // }
-        // );
     }
 
     async getEventsStats(eventStatus: string): Promise<string>{

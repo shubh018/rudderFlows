@@ -14,20 +14,18 @@ export function updateEnv(key: string, value: string) {
 
     let found = false;
     lines = lines.map(line => {
-        // Ignore empty/comment lines
         if (!line || line.trim().startsWith('#')) return line;
 
-        // Split into key/value ignoring spaces around '='
         const [k, ...rest] = line.split('=');
         const cleanKey = k.trim();
         const cleanVal = rest.join('=').trim();
 
         if (cleanKey === key) {
             found = true;
-            return `${key}=${value}`; // replace
+            return `${key}=${value}`;
         }
 
-        return `${cleanKey}=${cleanVal}`; // normalize formatting
+        return `${cleanKey}=${cleanVal}`;
     });
 
     if (!found) {

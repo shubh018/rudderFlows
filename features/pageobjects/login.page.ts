@@ -37,27 +37,7 @@ class LoginPage {
         if (appeared) {
             await this.mfaAlert.click();
             await this.goToDashboard.click();
-        }
-
-        // try{
-        //     const mfaAlertElement = await this.mfaAlert.waitForExist({timeout: 30000, reverse: false});
-
-        //     if (!mfaAlertElement){
-        //         await this.mfaAlert.click();
-        //         await this.goToDashboard.click();
-        //     }
-
-        // }
-
-        // catch{
-        //     console.log("MFA alert not received, continuing...")
-        // }
-        // const mfaAlertElement = await (this.mfaAlert).isExisting();
-        // if (!mfaAlertElement){
-        //     await this.mfaAlert.click();
-        //     await this.goToDashboard.click();
-        // }
-        
+        }        
     }
 
 }

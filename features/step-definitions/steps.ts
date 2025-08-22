@@ -77,9 +77,6 @@ Then("Capture Initial Success and Failure Events", async()=>{
 
 Then("Check Events Dashboard in Destination", async()=>{
     await destinationPage.refreshEvents();
-    // await destinationPage.clickDestinationNameCard();
-    // await destinationPage.clickEventsTab();
-
     const newSuccessfulEvents = await destinationPage.getEventsStats('delivered');
     const newFailedEvents = await destinationPage.getEventsStats('failed');
     const newFailedPercentageRate = await destinationPage.getEventsStats('failure rate');
